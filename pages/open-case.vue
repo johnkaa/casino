@@ -16,6 +16,12 @@ const duplicatedSkins = [...csSkins, ...csSkins, ...csSkins];
 
 function open() {
   if (balance.value && balance.value >= 115) {
+    gsap.to(".spinner", {
+      x: 0,
+      duration: 0,
+    });
+    balance.value -= 115;
+
     const randomNumber = +(Math.random() * 100).toFixed(2);
     let indexOfDroppedElement = 0;
     let valueOfSkins = 0;
@@ -26,13 +32,7 @@ function open() {
     }
     indexOfDroppedElement = indexOfIterator - 1;
 
-    gsap.to(".spinner", {
-      x: 0,
-      duration: 0,
-    });
-
     isSpinning.value = true;
-    balance.value -= 115;
     gsap.to(".spinner", {
       rotate: 0,
       x: -1700 - indexOfDroppedElement * 200,
