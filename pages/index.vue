@@ -24,12 +24,11 @@ const gameCards: GameCardType[] = [
 <template>
   <div class="home">
     <UContainer>
-      <div class="games grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <NuxtLink
           v-for="(game, index) in gameCards"
           :key="index"
           :to="!game.disabled ? game.link : ''"
-          class="game"
           :style="{ opacity: game.disabled ? 0.6 : 1 }"
         >
           <UCard>
@@ -38,6 +37,8 @@ const gameCards: GameCardType[] = [
               :src="game.img"
               fit="contain"
               alt="Open case"
+              width="250"
+              height="250"
             />
             <template #footer>{{ game.title }}</template>
           </UCard>
