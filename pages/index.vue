@@ -24,7 +24,7 @@ const gameCards: GameCardType[] = [
 <template>
   <div class="home">
     <UContainer>
-      <div class="games grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="games grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <NuxtLink
           v-for="(game, index) in gameCards"
           :key="index"
