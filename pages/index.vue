@@ -3,6 +3,7 @@ type GameCardType = {
   title: string;
   img: string;
   link: string;
+  disabled?: boolean;
 };
 
 const gameCards: GameCardType[] = [
@@ -10,6 +11,12 @@ const gameCards: GameCardType[] = [
     title: "Open case",
     img: "/images/games/open-case.png",
     link: "/open-case",
+  },
+  {
+    title: "Coming soon",
+    img: "/images/games/coming-soon.png",
+    link: "/",
+    disabled: true,
   },
 ];
 </script>
@@ -21,11 +28,17 @@ const gameCards: GameCardType[] = [
         <NuxtLink
           v-for="(game, index) in gameCards"
           :key="index"
-          :to="game.link"
+          :to="!game.disabled ? game.link : ''"
           class="game"
+          :style="{ opacity: game.disabled ? 0.6 : 1 }"
         >
           <UCard>
-            <NuxtImg :src="game.img" fit="contain" alt="Open case" />
+            <NuxtImg
+              class="w-full"
+              :src="game.img"
+              fit="contain"
+              alt="Open case"
+            />
             <template #footer>{{ game.title }}</template>
           </UCard>
         </NuxtLink>
