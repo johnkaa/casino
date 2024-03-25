@@ -16,6 +16,15 @@ const duplicatedSkins = [...csSkins, ...csSkins, ...csSkins];
 
 function open() {
   if (balance.value && balance.value >= 115) {
+    const isMobile = window.innerWidth < 765;
+    const isTablet = window.innerWidth < 1200;
+    let startSpinX = -1700;
+    if (isMobile) {
+      startSpinX = -2140;
+    } else if (isTablet) {
+      startSpinX = -1940;
+    }
+
     gsap.to(".spinner", {
       x: 0,
       duration: 0,
@@ -35,7 +44,7 @@ function open() {
     isSpinning.value = true;
     gsap.to(".spinner", {
       rotate: 0,
-      x: -1700 - indexOfDroppedElement * 200,
+      x: startSpinX - indexOfDroppedElement * 200,
       duration: 1,
       animation: "easeInOut",
       onComplete: () => {
@@ -101,7 +110,7 @@ function sellSkin() {
 
       <div class="open-case__skins mt-5">
         <h2 class="text-3xl text-center mb-2">Skins in this case</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div class="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           <UCard
             v-for="(skin, index) in csSkins"
             :key="index"
