@@ -12,11 +12,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  ui: {
-    notifications: {
-      position: "bottom-0 top-auto",
-    },
-  },
   googleFonts: {
     families: {
       Roboto: true,
