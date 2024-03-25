@@ -20,5 +20,3 @@ if (!balance.value) {
     </UContainer>
   </header>
 </template>
-
-<style scoped></style>

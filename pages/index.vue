@@ -46,5 +46,3 @@ const gameCards: GameCardType[] = [
     </UContainer>
   </div>
 </template>
-
-<style scoped></style>

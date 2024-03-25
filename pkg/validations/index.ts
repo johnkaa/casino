@@ -6,7 +6,6 @@ export function useNumberValidation(label: string) {
     .required()
     .min(1)
     .max(10000)
-    .nullable()
     .typeError(`${label} must be a number`)
     .label(label);
 }

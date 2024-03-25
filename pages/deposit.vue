@@ -69,5 +69,3 @@ onMounted(() => {
     </UContainer>
   </div>
 </template>
-
-<style scoped></style>

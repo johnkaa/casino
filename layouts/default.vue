@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="default-layout">
     <GeneralTheHeader />
@@ -9,5 +7,3 @@
     <UNotifications />
   </div>
 </template>
-
-<style scoped></style>
