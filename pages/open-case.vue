@@ -129,9 +129,11 @@ function sellSkin() {
 
     <UModal v-if="winnedSkin" v-model="isEndOfSpin">
       <UCard>
-        <div class="p-4">
-          <NuxtImg :src="winnedSkin.img" />
-        </div>
+        <template #default>
+          <div class="flex justify-center items-center">
+            <NuxtImg :src="winnedSkin.img" />
+          </div>
+        </template>
         <template #footer>
           <div class="flex justify-between">
             <UButton color="red" @click="isEndOfSpin = false">Close</UButton>
