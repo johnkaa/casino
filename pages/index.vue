@@ -35,8 +35,8 @@ const gameCards: GameCardType[] = [
             <NuxtImg
               class="w-full"
               :src="game.img"
+              :alt="game.title"
               fit="contain"
-              alt="Open case"
               width="250"
               height="250"
             />
